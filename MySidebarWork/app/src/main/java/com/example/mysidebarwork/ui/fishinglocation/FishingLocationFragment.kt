@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.mysidebarwork.databinding.FragmentFishingLocationBinding
 
-
 class FishingLocationFragment : Fragment() {
 
     private var _binding: FragmentFishingLocationBinding? = null
@@ -21,14 +20,14 @@ class FishingLocationFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val slideshowViewModel =
+        val fishinglocationViewModel =
             ViewModelProvider(this).get(FishingLocationViewModel::class.java)
 
         _binding = FragmentFishingLocationBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.textFishingLocation
-        slideshowViewModel.text.observe(viewLifecycleOwner) {
+        fishinglocationViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root
